@@ -18,8 +18,8 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   </head>
   <body class="body">
-    <div class="body__wrapper">
-      <header class="header">
+    
+      <div class="wrapper-black"><header class="header">
         <ul class="menu">
           <li class="menu__item"><a data-goto=".page-1" href="#" class="menu__link">обо мне</a></li>
           <li class="menu__item">
@@ -34,10 +34,11 @@
           <span class="burger__line"></span>
           
                 </div><!-- /.header__burger burger-->
-      </header>
+      </header></div>
+      <!-- /.wrapper -->
 
       <main class="content">
-        <section class="cover">
+        <div class="wrapper-black"><section class="cover">
           <div class="cover__item">
             <img src="img/logo.png" class="cover__logo" alt="logo" />
             <h1 class="cover__title">привет! меня зовут karina quest</h1>
@@ -48,8 +49,9 @@
             <img class="cover__img" src="img/foto.png" alt="my foto" />
           </div>
           <!-- /.cover__item -->
-        </section>
-        <section id="myself" class="myself page-1">
+        </section></div>
+        <!-- /.wrapper -->
+       <section id="myself" class="myself page-1">
           <div class="myself__item">
             <div class="myself__before"></div>
             <!-- /.myself__before -->
@@ -69,7 +71,7 @@
           </div>
           <!-- /.myself__item -->
         </section>
-        <section  class="portfolio ">
+        <div class="wrapper-black"><section  class="portfolio ">
           <h2 id="portfolio" class="portfolio__title page-2">Портфолио</h2>
           <div class="portfolio__item">
             <img
@@ -149,7 +151,7 @@
             <a href="https://www.behance.net/gallery/140781455/Music-studio" class="portfolio__link">смотреть проект</a>
           </div>
           <!-- /.portfolio__item -->
-        </section>
+        </section></div>
         <section id="services" class="services page-3">
           <h2 class="services__title">Услуги</h2>
           <div class="services__cards">
@@ -197,7 +199,7 @@
           <!-- /.cards -->
         </section>
       </main>
-      <footer id="footer"  class="footer page-4">
+      <div class="wrapper-black"><footer id="footer"  class="footer page-4">
         <h2 class="footer__title">контакты</h2>
         <div class="footer__item">
           <a class="footer__link" href="mailto:karinamair@mail.ru"
@@ -215,9 +217,8 @@
           >
         </div>
         <!-- /.footer__item -->
-      </footer>
-    </div>
-    <!-- /.body__wrapper -->
+      </footer></div>
+   
     <script src="scroll.js"></script>
     <script src="burger.js"></script>
   </body>

@@ -36,6 +36,9 @@ $maxWidthContainer: 1447;
   padding: 0;
   box-sizing: border-box;
 }
+.wrapper-black {
+  background-color: $black;
+}
 
 .body {
   height: 100%;
@@ -43,457 +46,458 @@ $maxWidthContainer: 1447;
   font-style: normal;
   font-weight: 500;
 
-  &__wrapper {
+  .header {
     max-width: 1447px;
-    overflow: hidden;
-  }
-}
-.header {
-  background-color: $black;
-}
-.burger {
-  display: none;
-  @media (max-width: 760px) {
     display: flex;
-    justify-content: center;
     margin-left: auto;
-    z-index: 3;
-    height: 50px;
-    width: 50px;
-    border-radius: 10px;
-    position: absolute;
-    cursor: pointer;
-    right: 20px;
-    top: 10px;
   }
-}
-.burger__line,
-.burger__line::before,
-.burger__line::after {
-  position: absolute;
-  background-color: $white;
-  width: 35px;
-  height: 3px;
-  border-radius: 2px;
-  box-shadow: 1px 1px 1px $black;
-}
-
-.burger__line {
-  top: 50%;
-}
-.burger__line::before,
-.burger__line::after {
-  content: "";
-  display: block;
-  transition: all 0.3s ease 0s;
-}
-.burger__line::before {
-  transform: translateY(-10px);
-}
-
-.burger__line::after {
-  transform: translateY(10px);
-}
-.burger__line.burger-active {
-  height: 0;
-}
-
-.burger__line.burger-active::before {
-  transform: rotate(-45deg);
-  background-color: $black;
-  transition: 1s;
-}
-
-.burger__line.burger-active::after {
-  transform: rotate(45deg);
-  background-color: $black;
-  transition: 1s;
-}
-
-.menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style-type: none;
-  background-color: $white;
-  max-width: 1049px;
-  margin-left: auto;
-  height: 187px;
-  @media (max-width: 760px) {
-    justify-content: space-evenly;
-  }
-
-  @media (max-width: 760px) {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    background-color: rgba(253, 238, 238, 0.9);
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    transition: all 1s ease 0s;
-    flex-direction: column;
-    padding-top: 130px;
-    border-radius: 0;
-    overflow: auto;
-  }
-
-  &__item {
-    margin: 0 20px;
+  .burger {
+    display: none;
     @media (max-width: 760px) {
       display: flex;
       justify-content: center;
-      align-items: center;
-      margin: 20px 0;
+      margin-left: auto;
+      z-index: 3;
+      height: 50px;
+      width: 50px;
+      border-radius: 10px;
+      position: absolute;
+      cursor: pointer;
+      right: 20px;
+      top: 10px;
     }
   }
+  .burger__line,
+  .burger__line::before,
+  .burger__line::after {
+    position: absolute;
+    background-color: $white;
+    width: 35px;
+    height: 3px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px $black;
+  }
 
-  &__link {
-    font-weight: 600;
-    line-height: 30px;
-    text-transform: uppercase;
-    color: $black;
-    text-decoration: none;
-    border-bottom: 4px solid transparent;
-    @include adaptiv("font-size", 25, 20, 0);
-    &:hover {
-      border-bottom: 4px solid $black;
-    }
+  .burger__line {
+    top: 50%;
   }
-  &__active {
-    left: 0;
+  .burger__line::before,
+  .burger__line::after {
+    content: "";
+    display: block;
+    transition: all 0.3s ease 0s;
   }
-}
+  .burger__line::before {
+    transform: translateY(-10px);
+  }
 
-.cover {
-  background-color: $black;
-  display: flex;
-  padding-bottom: 200px;
-  @media (max-width: 760px) {
-    flex-direction: column-reverse;
-    padding-bottom: 0;
+  .burger__line::after {
+    transform: translateY(10px);
   }
-  &__logo {
-    border-bottom: 1px solid #ccc;
-    @include adaptiv("max-width", 400, 80, 0);
+  .burger__line.burger-active {
+    height: 0;
+  }
+
+  .burger__line.burger-active::before {
+    transform: rotate(-45deg);
+    background-color: $black;
+    transition: 1s;
+  }
+
+  .burger__line.burger-active::after {
+    transform: rotate(45deg);
+    background-color: $black;
+    transition: 1s;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    background-color: $white;
+    width: 1049px;
+    margin-left: auto;
+    height: 187px;
     @media (max-width: 760px) {
-      border: none;
+      justify-content: space-evenly;
+    }
+
+    @media (max-width: 760px) {
       position: absolute;
       top: 0;
+      left: -100%;
+      background-color: rgba(253, 238, 238, 0.9);
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      transition: all 1s ease 0s;
+      flex-direction: column;
+      padding-top: 130px;
+      border-radius: 0;
+      overflow: auto;
+    }
+
+    &__item {
+      margin: 0 20px;
+      @media (max-width: 760px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+      }
+    }
+
+    &__link {
+      font-weight: 600;
+      line-height: 30px;
+      text-transform: uppercase;
+      color: $black;
+      text-decoration: none;
+      border-bottom: 4px solid transparent;
+      @include adaptiv("font-size", 25, 20, 0);
+      &:hover {
+        border-bottom: 4px solid $black;
+      }
+    }
+    &__active {
       left: 0;
     }
   }
-  &__item {
+
+  .cover {
+    max-width: 1447px;
+
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin: 0 auto;
+    padding-bottom: 200px;
     @media (max-width: 760px) {
-      margin: 0 auto;
+      flex-direction: column-reverse;
+      padding-bottom: 0;
     }
-  }
+    &__logo {
+      border-bottom: 1px solid #ccc;
+      @include adaptiv("max-width", 400, 80, 0);
+      @media (max-width: 760px) {
+        border: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @media (max-width: 760px) {
+        margin: 0 auto;
+      }
+    }
 
-  &__title {
-    font-weight: 400;
-    line-height: 65px;
-    text-transform: uppercase;
-    margin-top: 70px;
-    color: $white;
+    &__title {
+      font-weight: 400;
+      line-height: 50px;
+      text-transform: uppercase;
+      margin-top: 70px;
+      color: $white;
 
-    @include adaptiv("font-size", 70, 24, 0);
-    @media (max-width: 760px) {
+      @include adaptiv("font-size", 70, 24, 0);
+      @media (max-width: 760px) {
+        text-align: center;
+      }
+    }
+
+    &__text {
+      background-color: $white;
+      font-weight: 600;
+      line-height: 61px;
       text-align: center;
+      text-transform: uppercase;
+      padding: 32px 50px;
+      margin-top: 60px;
+      @include adaptiv("font-size", 50, 20, 0);
+      @include adaptiv("width", 625, 228, 0);
+      @media (max-width: 760px) {
+        margin: 30px auto 0;
+        padding: 0;
+      }
     }
-  }
 
-  &__text {
-    background-color: $white;
-    font-weight: 600;
-    line-height: 61px;
-    text-align: center;
-    text-transform: uppercase;
-    padding: 32px 50px;
-    margin-top: 60px;
-    @include adaptiv("font-size", 50, 20, 0);
-    @include adaptiv("width", 625, 228, 0);
-    @media (max-width: 760px) {
-      margin: 30px auto 0;
-      padding: 0;
+    &__img {
+      @include adaptiv("max-width", 700, 295, 0);
+      @media (max-width: 760px) {
+        margin-top: 120px;
+      }
     }
   }
-
-  &__img {
-    @include adaptiv("max-width", 700, 295, 0);
-    @media (max-width: 760px) {
-      margin-top: 120px;
-    }
-  }
-}
-.myself {
-  height: 100%;
-  display: flex;
-  position: relative;
-  justify-content: center;
-  padding-bottom: 300px;
-
-  @media (max-width: 760px) {
-    flex-direction: column;
-    background-color: $black;
-    color: $white;
-    padding-bottom: 100px;
-  }
-  &__before {
-    background-color: rgba(0, 0, 0, 0.8);
-    position: absolute;
-    left: -22px;
-    z-index: -1;
-    @include adaptiv("width", 517, 187, 0);
-    @include adaptiv("height", 525, 200, 0);
-    @include adaptiv("top", 194, 70, 0);
-    @media (max-width: 760px) {
-      left: 147px;
-      background-color: rgba(54, 51, 51, 0.8);
-      z-index: 0;
-    }
-    @media (max-width: 610px) {
-      left: 110px;
-    }
-    @media (max-width: 510px) {
-      left: 80px;
-    }
-    @media (max-width: 470px) {
-      left: 50px;
-    }
-  }
-  &__item {
+  .myself {
+    max-width: 1447px;
+    margin: 0 auto;
+    height: 100%;
     display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    padding-bottom: 300px;
+
     @media (max-width: 760px) {
-      margin: 0 auto;
+      flex-direction: column;
+      background-color: $black;
+      color: $white;
+      padding-bottom: 100px;
+    }
+    &__before {
+      background-color: rgba(0, 0, 0, 0.8);
+      position: absolute;
+      left: -22px;
+      z-index: -1;
+      @include adaptiv("width", 517, 187, 0);
+      @include adaptiv("height", 525, 200, 0);
+      @include adaptiv("top", 194, 70, 0);
+      @media (max-width: 760px) {
+        left: 147px;
+        background-color: rgba(54, 51, 51, 0.8);
+        z-index: 0;
+      }
+      @media (max-width: 610px) {
+        left: 110px;
+      }
+      @media (max-width: 510px) {
+        left: 80px;
+      }
+      @media (max-width: 470px) {
+        left: 50px;
+      }
+    }
+    &__item {
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+      @media (max-width: 760px) {
+        margin: 0 auto;
+      }
+    }
+
+    &__img {
+      @include adaptiv("max-width", 517, 187, 0);
+      @include adaptiv("margin-top", 230, 106, 0);
+      @media (max-width: 760px) {
+        z-index: 1;
+      }
+    }
+
+    &__title {
+      margin: 40px 0;
+      text-align: center;
+      @include adaptiv("font-size", 36, 20, 0);
+    }
+
+    &__text {
+      font-weight: 400;
+      line-height: 30px;
+      padding: 30px;
+      @include adaptiv("font-size", 24, 16, 0);
+      @media (max-width: 760px) {
+        line-height: 20px;
+        padding-top: 0;
+      }
     }
   }
-
-  &__img {
-    @include adaptiv("max-width", 517, 187, 0);
-    @include adaptiv("margin-top", 230, 106, 0);
-    @media (max-width: 760px) {
-      z-index: 1;
-    }
-  }
-
-  &__title {
-    margin: 40px 0;
-    text-align: center;
-    @include adaptiv("font-size", 36, 20, 0);
-  }
-
-  &__text {
-    font-weight: 400;
-    line-height: 30px;
-    padding: 30px;
-    @include adaptiv("font-size", 24, 16, 0);
-    @media (max-width: 760px) {
-      line-height: 20px;
-      padding-top: 0;
-    }
-  }
-}
-.portfolio {
-  background-color: $black;
-  position: relative;
-  padding-bottom: 10px;
-  padding-top: 141px;
-  @media (max-width: 760px) {
-    color: $white;
-    padding: 0;
-  }
-  &__title {
-    font-weight: 600;
-    line-height: 44px;
-    text-align: center;
-    color: $black;
-    position: absolute;
-    left: 42%;
-    @include adaptiv("font-size", 36, 20, 0);
-    @include adaptiv("top", -156, -30, 0);
+  .portfolio {
+    position: relative;
+    padding-bottom: 10px;
+    padding-top: 141px;
     @media (max-width: 760px) {
       color: $white;
-      left: 38%;
+      padding: 0;
     }
-    @media (max-width: 450px) {
-      left: 34%;
+    &__title {
+      font-weight: 600;
+      line-height: 44px;
+      text-align: center;
+      color: $black;
+      position: absolute;
+      left: 42%;
+      @include adaptiv("font-size", 36, 20, 0);
+      @include adaptiv("top", -156, -30, 0);
+      @media (max-width: 760px) {
+        color: $white;
+        left: 38%;
+      }
+      @media (max-width: 450px) {
+        left: 34%;
+      }
+    }
+
+    &__item {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-evenly;
+      margin-bottom: 130px;
+      @media (max-width: 855px) {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0px;
+        padding-top: 30px;
+      }
+    }
+
+    &__img {
+      filter: drop-shadow(0px 4px 4px rgba(255, 255, 255, 0.9));
+      border-radius: 22px;
+      margin: 0 25px;
+      @include adaptiv("max-width", 945, 295, 0);
+    }
+
+    &__btn {
+      border: 5px solid $white;
+      filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
+      border-radius: 29px;
+      padding: 25px 30px;
+      margin: 0 20px 100px 20px;
+      cursor: pointer;
+      @media (max-width: 855px) {
+        margin: 30px 20px;
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      line-height: 125.02%;
+      text-align: center;
+      color: $white;
+      @include adaptiv("font-size", 30, 14, 0);
     }
   }
 
-  &__item {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-evenly;
-    margin-bottom: 130px;
-    @media (max-width: 855px) {
+  .services {
+    padding-bottom: 60px;
+    max-width: 1447px;
+    margin: 0 auto;
+    &__title {
+      margin: 100px 0;
+
+      font-weight: 600;
+      line-height: 125.02%;
+      text-align: center;
+      color: $black;
+      @include adaptiv("font-size", 36, 20, 0);
+
+      @media (max-width: 760px) {
+        margin: 30px 0;
+      }
+    }
+    &__cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      width: 411px;
+      height: 420px;
+      background-color: $black;
+      border-radius: 12px;
+      display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 0px;
-      padding-top: 30px;
+      justify-content: space-between;
+      padding: 48px 95px 48px 95px;
+      margin: 30px;
+      @include adaptiv("width", 411, 207, 0);
+      @include adaptiv("height", 420, 310, 0);
+      @media (max-width: 760px) {
+        padding: 40px;
+      }
+    }
+
+    &__titles {
+      line-height: 125.02%;
+      text-align: center;
+
+      color: $white;
+      @include adaptiv("font-size", 24, 15, 0);
+    }
+
+    &__text {
+      font-size: 26px;
+      line-height: 125.02%;
+      text-align: center;
+
+      color: $white;
+      @include adaptiv("font-size", 26, 16, 0);
+    }
+    &__img {
+      width: 56px;
+      height: 56px;
+    }
+    &__btn {
+      padding: 8px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $white;
+      border-radius: 4px;
+
+      cursor: pointer;
+      @include adaptiv("width", 200, 100, 0);
+    }
+
+    &__link {
+      text-decoration: none;
+
+      line-height: 125.02%;
+      text-align: center;
+
+      color: $black;
+      @include adaptiv("font-size", 26, 15, 0);
     }
   }
-
-  &__img {
-    filter: drop-shadow(0px 4px 4px rgba(255, 255, 255, 0.9));
-    border-radius: 22px;
-    margin: 0 25px;
-    @include adaptiv("max-width", 945, 295, 0);
-  }
-
-  &__btn {
-    border: 5px solid $white;
-    filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 29px;
-    padding: 25px 30px;
-    margin: 0 20px 100px 20px;
-    cursor: pointer;
-    @media (max-width: 855px) {
-      margin: 30px 20px;
-    }
-  }
-
-  &__link {
-    text-decoration: none;
-    line-height: 125.02%;
-    text-align: center;
-    color: $white;
-    @include adaptiv("font-size", 30, 14, 0);
-  }
-}
-
-.services {
-  padding-bottom: 60px;
-  &__title {
-    margin: 100px 0;
-
-    font-weight: 600;
-    line-height: 125.02%;
-    text-align: center;
-    color: $black;
-    @include adaptiv("font-size", 36, 20, 0);
-
-    @media (max-width: 760px) {
-      margin: 30px 0;
-    }
-  }
-  &__cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  &__item {
-    width: 411px;
-    height: 420px;
-    background-color: $black;
-    border-radius: 12px;
+  .footer {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
-    padding: 48px 95px 48px 95px;
-    margin: 30px;
-    @include adaptiv("width", 411, 207, 0);
-    @include adaptiv("height", 420, 310, 0);
-    @media (max-width: 760px) {
-      padding: 40px;
-    }
-  }
-
-  &__titles {
-    line-height: 125.02%;
-    text-align: center;
-
-    color: $white;
-    @include adaptiv("font-size", 24, 15, 0);
-  }
-
-  &__text {
-    font-size: 26px;
-    line-height: 125.02%;
-    text-align: center;
-
-    color: $white;
-    @include adaptiv("font-size", 26, 16, 0);
-  }
-  &__img {
-    width: 56px;
-    height: 56px;
-  }
-  &__btn {
-    padding: 8px 20px;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: $white;
-    border-radius: 4px;
 
-    cursor: pointer;
-    @include adaptiv("width", 200, 100, 0);
-  }
+    &__title {
+      color: $white;
+      line-height: 36px;
+      text-align: center;
+      margin-top: 54px;
+      margin-bottom: 30px;
+      @include adaptiv("font-size", 36, 20, 0);
+    }
 
-  &__link {
-    text-decoration: none;
+    &__item {
+      height: 33px;
+      background-color: $white;
+      border-radius: 7px;
+      padding: 6px;
+      text-align: center;
+      margin-bottom: 15px;
+      @include adaptiv("width", 433, 285, 0);
+    }
 
-    line-height: 125.02%;
-    text-align: center;
+    &__link {
+      line-height: 24px;
+      text-align: center;
+      text-decoration: none;
+      color: $black;
 
-    color: $black;
-    @include adaptiv("font-size", 26, 15, 0);
-  }
-}
-.footer {
-  background-color: $black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  &__title {
-    color: $white;
-    line-height: 36px;
-    text-align: center;
-    margin-top: 54px;
-    margin-bottom: 30px;
-    @include adaptiv("font-size", 36, 20, 0);
-  }
-
-  &__item {
-    height: 33px;
-    background-color: $white;
-    border-radius: 7px;
-    padding: 6px;
-    text-align: center;
-    margin-bottom: 15px;
-    @include adaptiv("width", 433, 285, 0);
-  }
-
-  &__link {
-    line-height: 24px;
-    text-align: center;
-    text-decoration: none;
-    color: $black;
-
-    @include adaptiv("font-size", 24, 16, 0);
-  }
-  &::after {
-    content: "";
-    width: 100%;
-    height: 84px;
-    background-color: $white;
-    margin-top: 60px;
-    @media (max-width: 760px) {
-      width: 0;
-      margin: 0;
+      @include adaptiv("font-size", 24, 16, 0);
+    }
+    &::after {
+      content: "";
+      width: 100%;
+      height: 84px;
+      background-color: $white;
+      margin-top: 60px;
+      @media (max-width: 760px) {
+        width: 0;
+        margin: 0;
+      }
     }
   }
 }
-
 @media (min-width: 855px) {
   $elements: 8;
   @for $i from 0 to $elements {
