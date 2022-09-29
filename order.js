@@ -13,6 +13,8 @@ function order() {
       top: goToLink,
       behavior: "smooth",
     });
+
+    console.log(callLink);
     e.preventDefault();
   }
 }
